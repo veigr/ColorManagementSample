@@ -74,7 +74,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Model.cs" />
+    <Compile Include="Models\ImagingUtil.cs" />
     <Compile Include="Models\MonitorInfo.cs" />
     <Compile Include="Models\NativeMethods.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />

@@ -1,10 +1,10 @@
-ï»¿using System.Linq;
+using System.Linq;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using ColorManagementSample.Models;
 using Livet;
 
-namespace ColorManagementSample.ViewModels
+namespace ColorManagementSample.Views
 {
     public class MainWindowViewModel : ViewModel
     {
@@ -31,7 +31,7 @@ namespace ColorManagementSample.ViewModels
             this.ImageFilePath = this.ImageFilePath;
         }
 
-        #region ImageFilePathå¤‰æ›´é€šçŸ¥ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£
+        #region ImageFilePath•ÏX’Ê’mƒvƒƒpƒeƒB
         private string _ImageFilePath;
 
         public string ImageFilePath
@@ -52,7 +52,7 @@ namespace ColorManagementSample.ViewModels
         }
         #endregion
 
-        #region ImageSourceå¤‰æ›´é€šçŸ¥ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£
+        #region ImageSource•ÏX’Ê’mƒvƒƒpƒeƒB
         private BitmapSource _ImageSource;
 
         public BitmapSource ImageSource

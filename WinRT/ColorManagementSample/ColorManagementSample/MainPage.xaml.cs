@@ -55,32 +55,19 @@ namespace ColorManagementSample
 
         private async void OpenNewWindowClick(object sender, RoutedEventArgs e)
         {
-            //２回たたくと死ぬ
-
-            if (!ProjectionManager.ProjectionDisplayAvailable) return;
-
-            var appView = ApplicationView.GetForCurrentView();
-            ApplicationView newView = null;
-
-            var view = CoreApplication.CreateNewView();
-            await view.Dispatcher.RunAsync(
+            var currentViewId = ApplicationView.GetForCurrentView().Id;
+            var newViewId = default(int);
+            await CoreApplication.CreateNewView().Dispatcher.RunAsync(
                 CoreDispatcherPriority.Normal,
-                async () =>
+                () =>
                 {
-                    var newWindow = Window.Current;
-                    newView = ApplicationView.GetForCurrentView();
+                    var frame = new Frame();
+                    frame.Navigate(typeof(MainPage));
+                    Window.Current.Content = frame;
 
-                    var rootFrame = newWindow.Content as Frame;
-                    rootFrame = new Frame();
-                    rootFrame.Language = Windows.Globalization.ApplicationLanguages.Languages[0];
-                    newWindow.Content = rootFrame;
-                    rootFrame.Navigate(typeof(MainPage), null);
-
-                    // 同一アプリのアプリケーション画面として別画面に投影開始
-                    await ProjectionManager.StartProjectingAsync(newView.Id, appView.Id);
+                    newViewId = ApplicationView.GetForCurrentView().Id;
                 });
-            // 表示画面を交換する
-            //await ProjectionManager.SwapDisplaysForViewsAsync(newView.Id, appView.Id);
+            await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newViewId);
         }
 
         private async void OpenImageClick(object sender, RoutedEventArgs e)

@@ -102,6 +102,8 @@ namespace ColorManagementSample.Models
             var sb = new StringBuilder((int) lpcbName);
             NativeMethods.GetICMProfile(dc, ref lpcbName, sb);
 
+            NativeMethods.DeleteDC(dc);
+
             var profileUri = sb.ToString();
             var context = new ColorContext(new Uri(profileUri));
 

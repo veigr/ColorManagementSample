@@ -32,6 +32,11 @@ namespace ColorManagementSample.Models
             string lpszDevice,
             string lpszOutput,
             IntPtr lpInitData);
+
+        [DllImport("gdi32.dll")]
+        [return: MarshalAsAttribute(UnmanagedType.Bool)]
+        public static extern bool DeleteDC([InAttribute] IntPtr hdc);
+
     }
 
     #region Native Types

@@ -42,6 +42,7 @@ namespace ColorManagementSample.ViewModels
             {
                 if (value != null)
                 {
+                    //var image = new BitmapImage(new Uri(value));
                     var image = ImagingUtil.CreateColorConvertedBitmap(value);
                     if (image == null) return;
                     this.ImageSource = image;

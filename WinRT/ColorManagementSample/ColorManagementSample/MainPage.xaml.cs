@@ -142,7 +142,13 @@ namespace ColorManagementSample
                 {
                     await s.WriteAsync(bytes, 0, size);
                 }
+
                 this.Image1.Source = bitmap;
+
+                //var bitmapImage = new BitmapImage();
+                //var fileStream = await file.OpenStreamForReadAsync();
+                //await bitmapImage.SetSourceAsync(fileStream.AsRandomAccessStream());
+                //this.Image1.Source = bitmapImage;
             }
         }
     }

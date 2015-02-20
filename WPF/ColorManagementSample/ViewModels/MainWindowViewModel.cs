@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Media.Imaging;
 using ColorManagementSample.Models;
 using Livet;
+using System;
 
 namespace ColorManagementSample.ViewModels
 {
@@ -42,8 +43,12 @@ namespace ColorManagementSample.ViewModels
             {
                 if (value != null)
                 {
-                    //var image = new BitmapImage(new Uri(value));
+                    //// カラマネする場合
                     var image = ImagingUtil.CreateColorConvertedBitmap(value);
+
+                    ////// カラマネしない場合
+                    //var image = new BitmapImage(new Uri(value));
+                    
                     if (image == null) return;
                     this.ImageSource = image;
                 }

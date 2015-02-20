@@ -90,6 +90,7 @@ namespace ColorManagementSample
             if (file == null) return;
             this.currentFile = file;
 
+            //// カラマネする場合
             // モニタプロファイルのStreamを作成
             // ※物理モニタがない環境だと例外を吐く
             var profileStream = await DisplayInformation.GetForCurrentView().GetColorProfileAsync();
@@ -144,12 +145,13 @@ namespace ColorManagementSample
                 }
 
                 this.Image1.Source = bitmap;
-
-                //var bitmapImage = new BitmapImage();
-                //var fileStream = await file.OpenStreamForReadAsync();
-                //await bitmapImage.SetSourceAsync(fileStream.AsRandomAccessStream());
-                //this.Image1.Source = bitmapImage;
             }
+
+            ////// カラマネしない場合
+            //var bitmapImage = new BitmapImage();
+            //var fileStream = await file.OpenStreamForReadAsync();
+            //await bitmapImage.SetSourceAsync(fileStream.AsRandomAccessStream());
+            //this.Image1.Source = bitmapImage;
         }
     }
 }

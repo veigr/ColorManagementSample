@@ -6,7 +6,7 @@
         xmlns:l="http://schemas.livet-mvvm.net/2011/wpf"
         xmlns:v="clr-namespace:ColorManagementSample.Views"
         xmlns:vm="clr-namespace:ColorManagementSample.ViewModels"
-        Title="MainWindow" Height="350" Width="525" AllowDrop="True">
+        Title="MainWindow" Height="500" Width="820" AllowDrop="True">
     
     <Window.DataContext>
         <vm:MainWindowViewModel/>

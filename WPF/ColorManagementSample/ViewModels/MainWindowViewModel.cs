@@ -43,10 +43,10 @@ namespace ColorManagementSample.ViewModels
             {
                 if (value != null)
                 {
-                    //// カラマネする場合
+                    ////// カラマネする場合
                     var image = ImagingUtil.CreateColorConvertedBitmap(value);
 
-                    ////// カラマネしない場合
+                    //// カラマネしない場合
                     //var image = new BitmapImage(new Uri(value));
                     
                     if (image == null) return;
